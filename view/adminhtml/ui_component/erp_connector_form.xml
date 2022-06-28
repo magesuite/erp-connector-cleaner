@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <fieldset name="clean_up">
+    <fieldset name="cleaner">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string" translate="true">Clean Up</item>
+                <item name="label" xsi:type="string" translate="true">Clean Up Configuration</item>
             </item>
         </argument>
-        <field name="is_clean_up_enabled" formElement="checkbox">
+        <field name="is_enabled" formElement="checkbox">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="fit" xsi:type="boolean">false</item>
@@ -60,7 +60,7 @@
                 </checkbox>
             </formElements>
         </field>
-        <field name="save_clean_up_history" formElement="checkbox">
+        <field name="save_cleanup_history" formElement="checkbox">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="fit" xsi:type="boolean">false</item>
@@ -114,7 +114,7 @@
                 </checkbox>
             </formElements>
         </field>
-        <dynamicRows name="clean_up_schedulers">
+        <dynamicRows name="schedulers">
             <settings>
                 <addButtonLabel translate="true">Add Scheduler</addButtonLabel>
                 <componentType>dynamicRows</componentType>
@@ -124,8 +124,8 @@
                 <dndConfig>
                     <param name="enabled" xsi:type="boolean">false</param>
                 </dndConfig>
-                <dataScope>clean_up_schedulers</dataScope>
-                <label>Clean Up Cron Schedulers</label>
+                <dataScope>schedulers</dataScope>
+                <label>Cron Schedulers</label>
                 <notice>Check destination directory in selected connectors and set statuses for orders based on found files</notice>
                 <additionalClasses>
                     <class name="admin__field-wide">true</class>
@@ -142,7 +142,7 @@
                 <hidden name="type">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
-                            <item name="value" xsi:type="string">order_export_verification</item>
+                            <item name="value" xsi:type="string">cleaner</item>
                         </item>
                     </argument>
                 </hidden>
@@ -181,7 +181,7 @@
                     </settings>
                 </field>
                 <!--suppress XmlDefaultAttributeValue -->
-                <field name="file_name_pattern" formElement="input">
+                <field name="file_name" formElement="input">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
                             <item name="fit" xsi:type="boolean">false</item>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="MageSuite_ErpConnectorCleaner::clean_up_history" title="Clean Up" translate="title" module="MageSuite_ErpConnectorCleaner" sortOrder="30" parent="MageSuite_ErpConnector::history" action="erpconnectorcleaner/history/index" resource="MageSuite_ErpConnectorCleaner::history"/>
+        <!--add id="MageSuite_ErpConnectorCleaner::clean_up_history" title="Clean Up" translate="title" module="MageSuite_ErpConnectorCleaner" sortOrder="30" parent="MageSuite_ErpConnector::history" action="erpconnectorcleaner/history/index" resource="MageSuite_ErpConnectorCleaner::history"/-->
     </menu>
 </config>

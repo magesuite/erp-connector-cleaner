@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="erp_connector_cleaner_configuration" resource="default" engine="innodb">
+        <column xsi:type="int" name="configuration_id" padding="10" unsigned="true" nullable="false" identity="true"/>
+        <column xsi:type="int" name="provider_id" padding="10" unsigned="true" nullable="false"/>
+        <column xsi:type="tinyint" name="is_enabled" default="0" />
+        <column xsi:type="tinyint" name="save_cleanup_history" default="0"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="configuration_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="ERP_CONNECTOR_CLEANER_CONFIGURATION_PROVIDER_ID_ERP_CONNECTOR_PROVIDER_ID" table="erp_connector_cleaner_configuration"
+                    column="provider_id" referenceTable="erp_connector_provider" referenceColumn="id"
+                    onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="ERP_CONNECTOR_CLEANER_CONFIGURATION_PROVIDER_ID">
+            <column name="provider_id"/>
+        </constraint>
+    </table>
+</schema>

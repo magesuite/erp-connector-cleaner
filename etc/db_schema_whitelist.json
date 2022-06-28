@@ -1,0 +1,15 @@
+{
+    "erp_connector_cleaner_configuration": {
+        "column": {
+            "configuration_id": true,
+            "provider_id": true,
+            "is_enabled": true,
+            "save_cleanup_history": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_2CF80DFDC2DC471776286FD1B0E05F46": true,
+            "ERP_CONNECTOR_CLEANER_CONFIGURATION_PROVIDER_ID": true
+        }
+    }
+}
