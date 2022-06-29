@@ -8,4 +8,14 @@
 
     <preference for="MageSuite\ErpConnectorCleaner\Api\ConfigurationManagementInterface"
                 type="MageSuite\ErpConnectorCleaner\Model\ConfigurationManagement" />
+
+    <type name="MageSuite\ErpConnector\Model\SchedulersPool">
+        <arguments>
+            <argument name="schedulerGroups" xsi:type="array">
+                <item name="cleaner" xsi:type="array">
+                    <item name="general" xsi:type="object">Creativestyle\CustomizationIpetOrder\Service\OrderExportVerification\ProviderProcessor\General</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

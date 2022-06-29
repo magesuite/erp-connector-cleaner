@@ -49,4 +49,14 @@ class Configuration extends \Magento\Framework\Model\AbstractModel implements \M
     {
         return $this->setData(self::SAVE_CLEANUP_HISTORY, $saveCleanupHistory);
     }
+
+    public function getBatchSize()
+    {
+        return $this->_getData(self::BATCH_SIZE);
+    }
+
+    public function setBatchSize($batchSize)
+    {
+        return $this->setData(self::BATCH_SIZE, $batchSize);
+    }
 }

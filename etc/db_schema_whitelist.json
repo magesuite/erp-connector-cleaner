@@ -11,5 +11,10 @@
             "FK_2CF80DFDC2DC471776286FD1B0E05F46": true,
             "ERP_CONNECTOR_CLEANER_CONFIGURATION_PROVIDER_ID": true
         }
+    },
+    "erp_connector_scheduler": {
+        "column": {
+            "remove_files_older_than_days_ago": true
+        }
     }
 }
