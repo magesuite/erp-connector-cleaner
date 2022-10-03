@@ -62,7 +62,7 @@ class General extends \MageSuite\ErpConnector\Model\ProviderProcessor\ProviderPr
             $client->addData($clientData);
             $client->removeFiles();
 
-            $this->saveCleanupHistory($client, $connector->getId(), $this->scheduler->getProviderId());
+            $this->saveCleanupHistory($client, (int)$connector->getId(), (int)$this->scheduler->getProviderId());
         }
     }
 
@@ -75,7 +75,7 @@ class General extends \MageSuite\ErpConnector\Model\ProviderProcessor\ProviderPr
         $schedulerId = $this->scheduler->getId();
 
         if (!isset($this->schedulerIdToConfigurationMap[$schedulerId])) {
-            $this->schedulerIdToConfigurationMap[$schedulerId] = $this->configurationRepository->getByProviderId($this->scheduler->getProviderId());
+            $this->schedulerIdToConfigurationMap[$schedulerId] = $this->configurationRepository->getByProviderId((int)$this->scheduler->getProviderId());
         }
 
         return $this->schedulerIdToConfigurationMap[$schedulerId];
@@ -105,7 +105,7 @@ class General extends \MageSuite\ErpConnector\Model\ProviderProcessor\ProviderPr
      * @return void
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    protected function saveCleanupHistory($client, $connectorId, $providerId): void
+    protected function saveCleanupHistory($client, int $connectorId, int $providerId): void
     {
         if (!$this->getConfiguration()->getSaveCleanupHistory()) {
             return;

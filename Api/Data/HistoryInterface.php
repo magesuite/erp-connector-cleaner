@@ -52,44 +52,44 @@ interface HistoryInterface
     public function getCount();
 
     /**
-     * @param $id
+     * @param int $id
      * @return self
      */
-    public function setId($id);
+    public function setId(int $id);
 
     /**
-     * @param $providerId
+     * @param int $providerId
      * @return self
      */
-    public function setProviderId($providerId);
+    public function setProviderId(int $providerId);
 
     /**
-     * @param $connectorId
+     * @param int $connectorId
      * @return self
      */
-    public function setConnectorId($connectorId);
+    public function setConnectorId(int $connectorId);
 
     /**
-     * @param $createdAt
+     * @param string $createdAt
      * @return self
      */
-    public function setCreatedAt($createdAt);
+    public function setCreatedAt(string $createdAt);
 
     /**
-     * @param $firstFileName
+     * @param string $firstFileName
      * @return self
      */
-    public function setFirstFileName($firstFileName);
+    public function setFirstFileName(string $firstFileName);
 
     /**
-     * @param $lastFileName
+     * @param string $lastFileName
      * @return self
      */
-    public function setLastFileName($lastFileName);
+    public function setLastFileName(string $lastFileName);
 
     /**
-     * @param $count
+     * @param int $count
      * @return self
      */
-    public function setCount($count);
+    public function setCount(int $count);
 }

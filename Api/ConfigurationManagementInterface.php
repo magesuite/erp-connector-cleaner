@@ -5,5 +5,5 @@ namespace MageSuite\ErpConnectorCleaner\Api;
 
 interface ConfigurationManagementInterface
 {
-    public function execute(int $providerId, array $configurationData);
+    public function saveConfiguration(int $providerId, array $configurationData);
 }

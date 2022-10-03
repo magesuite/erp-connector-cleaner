@@ -5,17 +5,17 @@ namespace MageSuite\ErpConnectorCleaner\Observer;
 
 class RemoveFiles implements \Magento\Framework\Event\ObserverInterface
 {
-    protected \MageSuite\ErpConnectorCleaner\Service\Client\FileRemover $fileRemover;
+    protected \MageSuite\ErpConnectorCleaner\Model\Command\Client\RemoveFiles $removeFiles;
 
-    public function __construct(\MageSuite\ErpConnectorCleaner\Service\Client\FileRemover  $fileRemover)
+    public function __construct(\MageSuite\ErpConnectorCleaner\Model\Command\Client\RemoveFiles  $removeFiles)
     {
-        $this->fileRemover = $fileRemover;
+        $this->removeFiles = $removeFiles;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $client = $observer->getClient();
-        $result = $this->fileRemover->removeFiles($client);
+        $result = $this->removeFiles->execute($client);
         $client->setRemovedFiles($result);
     }
 }

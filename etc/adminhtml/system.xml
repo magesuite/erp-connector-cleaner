@@ -2,8 +2,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="erp_connector">
-            <label>Stock Import</label>
-            <tab>ipet</tab>
             <resource>MageSuite_ErpConnectorCleaner::history</resource>
             <group id="cleaner" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Cleaner</label>

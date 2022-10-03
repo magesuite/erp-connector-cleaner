@@ -71,7 +71,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->setData(self::ID, $id);
         return $this;
@@ -80,7 +80,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setProviderId($providerId)
+    public function setProviderId(int $providerId)
     {
         $this->setData(self::PROVIDER_ID, $providerId);
         return $this;
@@ -89,7 +89,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setConnectorId($connectorId)
+    public function setConnectorId(int $connectorId)
     {
         $this->setData(self::CONNECTOR_ID, $connectorId);
         return $this;
@@ -98,7 +98,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt(string $createdAt)
     {
         $this->setData(self::CREATED_AT, $createdAt);
         return $this;
@@ -107,7 +107,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setFirstFileName($firstFileName)
+    public function setFirstFileName(string $firstFileName)
     {
         $this->setData(self::FIRST_FILE_NAME, $firstFileName);
         return $this;
@@ -116,7 +116,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setLastFileName($lastFileName)
+    public function setLastFileName(string $lastFileName)
     {
         $this->setData(self::LAST_FILE_NAME, $lastFileName);
         return $this;
@@ -125,7 +125,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->setData(self::COUNT, $count);
         return $this;

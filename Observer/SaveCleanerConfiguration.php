@@ -28,6 +28,6 @@ class SaveCleanerConfiguration implements \Magento\Framework\Event\ObserverInter
             return;
         }
 
-        $this->configurationManagement->execute($providerId, $cleanerConfiguration);
+        $this->configurationManagement->saveConfiguration($providerId, $cleanerConfiguration);
     }
 }

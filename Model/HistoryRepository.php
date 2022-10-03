@@ -31,7 +31,7 @@ class HistoryRepository implements \MageSuite\ErpConnectorCleaner\Api\HistoryRep
     /**
      * {@inheritdoc}
      */
-    public function save($history)
+    public function save(\MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface $history)
     {
         try {
             $this->resourceModel->save($history);
@@ -45,7 +45,7 @@ class HistoryRepository implements \MageSuite\ErpConnectorCleaner\Api\HistoryRep
     /**
      * {@inheritdoc}
      */
-    public function getById($id)
+    public function getById(int $id)
     {
         $history = $this->historyFactory->create();
         $this->resourceModel->load($history, $id);
@@ -60,7 +60,7 @@ class HistoryRepository implements \MageSuite\ErpConnectorCleaner\Api\HistoryRep
     /**
      * {@inheritdoc}
      */
-    public function getByProviderId($providerId)
+    public function getByProviderId(int $providerId)
     {
         $searchCriteria = $this->searchCriteriaBuilder
             ->addFilter(\MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface::PROVIDER_ID, $providerId)
@@ -99,7 +99,7 @@ class HistoryRepository implements \MageSuite\ErpConnectorCleaner\Api\HistoryRep
     /**
      * {@inheritdoc}
      */
-    public function delete($history)
+    public function delete(\MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface $history)
     {
         try {
             $this->resourceModel->delete($history);
@@ -113,7 +113,7 @@ class HistoryRepository implements \MageSuite\ErpConnectorCleaner\Api\HistoryRep
     /**
      * {@inheritdoc}
      */
-    public function deleteById($id)
+    public function deleteById(int $id)
     {
         return $this->delete($this->getById($id));
     }

@@ -21,7 +21,7 @@ class ConfigurationManagement implements \MageSuite\ErpConnectorCleaner\Api\Conf
         $this->saveSchedulers = $saveSchedulers;
     }
 
-    public function execute(int $providerId, array $configurationData)
+    public function saveConfiguration(int $providerId, array $configurationData)
     {
         try {
             $configuration = $this->configurationRepository->getByProviderId($providerId);
@@ -29,9 +29,12 @@ class ConfigurationManagement implements \MageSuite\ErpConnectorCleaner\Api\Conf
             $configuration = $this->configurationFactory->create();
         }
 
-        $configuration->addData($configurationData)
+        $configuration
+            ->addData($configurationData)
             ->setProviderId($providerId);
+
         $this->configurationRepository->save($configuration);
+
         $schedulersData = $configurationData['schedulers']['schedulers'] ?? [];
         $this->saveSchedulers->execute($providerId, 'cleaner', $schedulersData);
     }

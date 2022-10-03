@@ -17,7 +17,7 @@ interface ConfigurationRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @return \MageSuite\ErpConnectorCleaner\Model\Data\Configuration
      */
-    public function getByProviderId($providerId);
+    public function getByProviderId(int $providerId);
 
     /**
      * @param \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $searchCriteria
@@ -30,7 +30,7 @@ interface ConfigurationRepositoryInterface
      * @param \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @throws \Magento\Framework\Exception\CouldNotSaveException
-     * @return bool
+     * @return \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration
      */
     public function save(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration);
 
@@ -41,4 +41,11 @@ interface ConfigurationRepositoryInterface
      * @return bool
      */
     public function delete(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration);
+
+    /**
+     * @param int $id
+     * @return bool
+     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     */
+    public function deleteById(int $id);
 }

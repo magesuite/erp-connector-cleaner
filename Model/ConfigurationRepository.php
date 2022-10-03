@@ -53,7 +53,7 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     /**
      * {@inheritdoc}
      */
-    public function getByProviderId($providerId)
+    public function getByProviderId(int $providerId)
     {
         $configuration = $this->configurationFactory->create();
         $configuration->load($providerId, 'provider_id');
@@ -125,8 +125,8 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     /**
      * {@inheritdoc}
      */
-    public function deleteById($configurationId)
+    public function deleteById(int $id)
     {
-        return $this->delete($this->getById($configurationId));
+        return $this->delete($this->getById($id));
     }
 }

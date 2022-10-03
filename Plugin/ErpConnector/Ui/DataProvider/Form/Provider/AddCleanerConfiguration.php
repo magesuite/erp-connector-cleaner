@@ -40,7 +40,7 @@ class AddCleanerConfiguration
             }
 
             try {
-                $data['cleaner']['schedulers'] = $this->getSchedulersByProviderIdAndType($providerId, 'cleaner');
+                $data['cleaner']['schedulers'] = $this->getSchedulersByProviderIdAndType((int)$providerId, 'cleaner');
 
             } catch (\Exception $e) {
                 $this->logger->warning($e->getMessage());
@@ -50,7 +50,7 @@ class AddCleanerConfiguration
         return $result;
     }
 
-    protected function getSchedulersByProviderIdAndType($providerId, $type)
+    protected function getSchedulersByProviderIdAndType(int $providerId, string $type)
     {
         $schedulers = $this->schedulerRepository->getByProviderIdAndType($providerId, $type);
 

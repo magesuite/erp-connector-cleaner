@@ -10,24 +10,24 @@ interface HistoryRepositoryInterface
      * @return \MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function save($history);
+    public function save(\MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface $history);
 
     /**
      * @param int $id
      * @return \MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function getById($id);
+    public function getById(int $id);
 
     /**
      * @param int $providerId
      * @return \MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface[]
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function getByProviderId($id);
+    public function getByProviderId(int $providerId);
 
     /**
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param ?\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      * @return \Magento\Framework\Api\SearchResultsInterface
      */
     public function getList($searchCriteria = null);
@@ -37,7 +37,7 @@ interface HistoryRepositoryInterface
      * @return bool true on success
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function delete($history);
+    public function delete(\MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface $history);
 
     /**
      * @param int $id

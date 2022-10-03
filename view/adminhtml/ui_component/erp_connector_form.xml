@@ -187,7 +187,7 @@
                             <rule name="required-entry" xsi:type="boolean">true</rule>
                         </validation>
                         <dataType>text</dataType>
-                        <label>Scheduler(cron syntax)</label>
+                        <label>Scheduler (cron syntax)</label>
                         <tooltip>
                             <link>https://crontab.guru/</link>
                             <description translate="true">You can check syntax here https://crontab.guru/</description>
