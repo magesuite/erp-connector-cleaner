@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="erp_connector">
+            <label>Stock Import</label>
+            <tab>ipet</tab>
+            <resource>MageSuite_ErpConnectorCleaner::history</resource>
+            <group id="cleaner" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cleaner</label>
+                <group id="cleanup_of_history" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cleanup of history</label>
+                    <field id="is_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Is Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="retention_period" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
+                        <label>Remove items older than X days</label>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

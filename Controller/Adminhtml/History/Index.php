@@ -10,7 +10,7 @@ class Index extends \Magento\Backend\App\Action implements \Magento\Framework\Ap
     public function execute()
     {
         $resultPage = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_PAGE);
-        $title = __('Clean Up History Summary');
+        $title = __('Clean Up History');
         $resultPage->setActiveMenu('MageSuite_ErpConnectorCleaner::clean_up_history');
         $resultPage->addBreadcrumb($title, $title);
         $resultPage->getConfig()->getTitle()->prepend($title);

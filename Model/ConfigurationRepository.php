@@ -6,22 +6,18 @@ namespace MageSuite\ErpConnectorCleaner\Model;
 class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\ConfigurationRepositoryInterface
 {
     /**
-     * @var \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface[]
+     * @var \MageSuite\ErpConnectorCleaner\Model\Data\Configuration[]
      */
     protected $instancesById = [];
 
-    protected \MageSuite\ErpConnectorCleaner\Model\ConfigurationFactory $configurationFactory;
-
+    protected \MageSuite\ErpConnectorCleaner\Model\Data\ConfigurationFactory $configurationFactory;
     protected \MageSuite\ErpConnectorCleaner\Model\ResourceModel\Configuration $configurationResource;
-
     protected \MageSuite\ErpConnectorCleaner\Model\ResourceModel\Configuration\CollectionFactory $collectionFactory;
-
     protected \Magento\Framework\Api\SearchResultsInterfaceFactory $searchResultsFactory;
-
     protected \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface $collectionProcessor;
 
     public function __construct(
-        \MageSuite\ErpConnectorCleaner\Model\ConfigurationFactory $configurationFactory,
+        \MageSuite\ErpConnectorCleaner\Model\Data\ConfigurationFactory $configurationFactory,
         \MageSuite\ErpConnectorCleaner\Model\ResourceModel\Configuration $configurationResource,
         \MageSuite\ErpConnectorCleaner\Model\ResourceModel\Configuration\CollectionFactory $collectionFactory,
         \Magento\Framework\Api\SearchResultsInterfaceFactory $searchResultsFactory,
@@ -35,9 +31,7 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param int $configurationId
-     * @return \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * {@inheritdoc}
      */
     public function getById(int $configurationId)
     {
@@ -57,11 +51,9 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param int $providerId
-     * @return \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * {@inheritdoc}
      */
-    public function getByProviderId(int $providerId)
+    public function getByProviderId($providerId)
     {
         $configuration = $this->configurationFactory->create();
         $configuration->load($providerId, 'provider_id');
@@ -76,8 +68,7 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
-     * @return \Magento\Framework\Api\SearchResultsInterface
+     * {@inheritdoc}
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $criteria)
     {
@@ -99,11 +90,9 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration
-     * @return \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
-     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     * {@inheritdoc}
      */
-    public function save(\MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration)
+    public function save(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration)
     {
         try {
             $this->configurationResource->save($configuration);
@@ -118,11 +107,9 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration
-     * @return bool
-     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     * {@inheritdoc}
      */
-    public function delete(\MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration)
+    public function delete(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration)
     {
         try {
             $this->configurationResource->delete($configuration);
@@ -136,10 +123,7 @@ class ConfigurationRepository implements \MageSuite\ErpConnectorCleaner\Api\Conf
     }
 
     /**
-     * @param int $configurationId
-     * @return bool
-     * @throws \Magento\Framework\Exception\CouldNotSaveException
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * {@inheritdoc}
      */
     public function deleteById($configurationId)
     {

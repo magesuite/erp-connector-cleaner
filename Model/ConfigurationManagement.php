@@ -7,13 +7,13 @@ class ConfigurationManagement implements \MageSuite\ErpConnectorCleaner\Api\Conf
 {
     protected \MageSuite\ErpConnectorCleaner\Api\ConfigurationRepositoryInterface $configurationRepository;
 
-    protected \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterfaceFactory $configurationFactory;
+    protected \MageSuite\ErpConnectorCleaner\Model\Data\ConfigurationFactory $configurationFactory;
 
     protected \MageSuite\ErpConnector\Model\Command\Provider\SaveSchedulers $saveSchedulers;
 
     public function __construct(
         \MageSuite\ErpConnectorCleaner\Api\ConfigurationRepositoryInterface $configurationRepository,
-        \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterfaceFactory $configurationFactory,
+        \MageSuite\ErpConnectorCleaner\Model\Data\ConfigurationFactory $configurationFactory,
         \MageSuite\ErpConnector\Model\Command\Provider\SaveSchedulers $saveSchedulers
     ) {
         $this->configurationRepository = $configurationRepository;

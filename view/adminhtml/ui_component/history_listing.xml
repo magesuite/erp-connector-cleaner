@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">history_listing.history_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New User</label>
+            </button>
+        </buttons>
+        <spinner>history_listing_columns</spinner>
+        <deps>
+            <dep>history_listing.history_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="history_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>MageSuite_ErpConnectorCleaner::history</aclResource>
+        <dataProvider class="MageSuite\ErpConnectorCleaner\Ui\DataProvider\Listing\History" name="history_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="history_listing_columns">
+        <settings>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">history_listing.history_listing.history_listing_columns.actions</item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">edit</item>
+                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <column name="id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="provider_id" class="MageSuite\ErpConnectorCleaner\Ui\Component\Listing\Column\ProviderName">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Provider Name</label>
+            </settings>
+        </column>
+        <column name="connector_id" class="MageSuite\ErpConnectorCleaner\Ui\Component\Listing\Column\ConnectorName">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Connector Name</label>
+            </settings>
+        </column>
+        <column name="created_at" class="MageSuite\ErpConnectorCleaner\Ui\Component\Listing\Column\CreatedAt">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Date</label>
+            </settings>
+        </column>
+        <column name="first_file_name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">First File</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="last_file_name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Last File</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="count">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Count</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+    </columns>
+</listing>

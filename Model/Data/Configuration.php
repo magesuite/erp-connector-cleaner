@@ -1,10 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace MageSuite\ErpConnectorCleaner\Model;
+namespace MageSuite\ErpConnectorCleaner\Model\Data;
 
-class Configuration extends \Magento\Framework\Model\AbstractModel implements \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
+class Configuration extends \Magento\Framework\Model\AbstractModel
 {
+    const CONFIGURATION_ID = 'configuration_id';
+    const PROVIDER_ID = 'provider_id';
+    const IS_ENABLED = 'is_enabled';
+    const SAVE_CLEANUP_HISTORY = 'save_cleanup_history';
+    const BATCH_SIZE = 'batch_size';
+
     protected function _construct()
     {
         $this->_init(\MageSuite\ErpConnectorCleaner\Model\ResourceModel\Configuration::class);

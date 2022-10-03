@@ -8,37 +8,37 @@ interface ConfigurationRepositoryInterface
     /**
      * @param int $configurationId
      * @throws \Magento\Framework\Exception\NoSuchEntityException
-     * @return \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
+     * @return \MageSuite\ErpConnectorCleaner\Model\Data\Configuration
      */
     public function getById(int $configurationId);
 
     /**
      * @param int $providerId
      * @throws \Magento\Framework\Exception\NoSuchEntityException
-     * @return \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface
+     * @return \MageSuite\ErpConnectorCleaner\Model\Data\Configuration
      */
-    public function getByProviderId(int $providerId);
+    public function getByProviderId($providerId);
 
     /**
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $searchCriteria
      * @return \Magento\Framework\Api\SearchResultsInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 
     /**
-     * @param \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration
+     * @param \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @throws \Magento\Framework\Exception\CouldNotSaveException
      * @return bool
      */
-    public function save(\MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration);
+    public function save(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration);
 
     /**
-     * @param \MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration
+     * @param \MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @throws \Magento\Framework\Exception\CouldNotSaveException
      * @return bool
      */
-    public function delete(\MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface $configuration);
+    public function delete(\MageSuite\ErpConnectorCleaner\Model\Data\Configuration $configuration);
 }

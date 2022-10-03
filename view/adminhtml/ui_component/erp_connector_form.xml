@@ -162,7 +162,6 @@
                         </item>
                     </argument>
                 </hidden>
-                <!--suppress XmlDefaultAttributeValue -->
                 <field name="name" formElement="input">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
@@ -177,7 +176,6 @@
                         <label>Name</label>
                     </settings>
                 </field>
-                <!--suppress XmlDefaultAttributeValue -->
                 <field name="cron_expression" formElement="input">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
@@ -196,7 +194,6 @@
                         </tooltip>
                     </settings>
                 </field>
-                <!--suppress XmlDefaultAttributeValue -->
                 <field name="file_name" formElement="input">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
@@ -211,7 +208,6 @@
                         </tooltip>
                     </settings>
                 </field>
-                <!--suppress XmlDefaultAttributeValue -->
                 <field name="remove_files_older_than_days_ago" formElement="input">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">

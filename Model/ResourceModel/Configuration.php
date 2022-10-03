@@ -10,4 +10,3 @@ class Configuration extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         $this->_init('erp_connector_cleaner_configuration', 'configuration_id');
     }
 }
-

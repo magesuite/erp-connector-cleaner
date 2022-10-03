@@ -1,20 +1,25 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MageSuite\ErpConnectorCleaner\Api\Data\ConfigurationInterface"
-                type="\MageSuite\ErpConnectorCleaner\Model\Configuration" />
-
-    <preference for="MageSuite\ErpConnectorCleaner\Api\ConfigurationRepositoryInterface"
-                type="MageSuite\ErpConnectorCleaner\Model\ConfigurationRepository" />
-
-    <preference for="MageSuite\ErpConnectorCleaner\Api\ConfigurationManagementInterface"
-                type="MageSuite\ErpConnectorCleaner\Model\ConfigurationManagement" />
+    <preference for="MageSuite\ErpConnectorCleaner\Api\ConfigurationRepositoryInterface" type="MageSuite\ErpConnectorCleaner\Model\ConfigurationRepository" />
+    <preference for="MageSuite\ErpConnectorCleaner\Api\ConfigurationManagementInterface" type="MageSuite\ErpConnectorCleaner\Model\ConfigurationManagement" />
+    <preference for="MageSuite\ErpConnectorCleaner\Api\HistoryRepositoryInterface" type="MageSuite\ErpConnectorCleaner\Model\HistoryRepository" />
+    <preference for="MageSuite\ErpConnectorCleaner\Api\Data\HistoryInterface" type="MageSuite\ErpConnectorCleaner\Model\Data\History" />
 
     <type name="MageSuite\ErpConnector\Model\SchedulersPool">
         <arguments>
             <argument name="schedulerGroups" xsi:type="array">
                 <item name="cleaner" xsi:type="array">
-                    <item name="general" xsi:type="object">Creativestyle\CustomizationIpetOrder\Service\OrderExportVerification\ProviderProcessor\General</item>
+                    <item name="general" xsi:type="object">MageSuite\ErpConnectorCleaner\Service\ProviderProcessor\General</item>
                 </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ErpConnectorCleaner\Service\ProviderProcessor\General">
+        <arguments>
+            <argument name="allowedConnectorTypes" xsi:type="array">
+                <item name="ftp" xsi:type="string">ftp</item>
+                <item name="sftp" xsi:type="string">sftp</item>
             </argument>
         </arguments>
     </type>

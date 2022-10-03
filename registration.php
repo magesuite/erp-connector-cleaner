@@ -4,4 +4,3 @@
     'MageSuite_ErpConnectorCleaner',
     __DIR__
 );
-
