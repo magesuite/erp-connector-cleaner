@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace MageSuite\ErpConnectorCleaner\Service\Client;
+namespace MageSuite\ErpConnectorCleaner\Model\Command\Client;
 
-class FileRemover
+class RemoveFiles
 {
     protected \Magento\Framework\Filesystem\Io\File $ioFile;
     protected \MageSuite\ErpConnector\Model\Command\LogErrorMessage $logErrorMessage;
@@ -16,7 +16,7 @@ class FileRemover
         $this->logErrorMessage = $logErrorMessage;
     }
 
-    public function removeFiles($client)
+    public function execute($client)
     {
         $destinationDir = $client->getFullPath($client->getData('destination_dir'));
         $provider = $client->getData('provider');
