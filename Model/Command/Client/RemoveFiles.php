@@ -35,7 +35,7 @@ class RemoveFiles
             $connection->cd($destinationDir);
             $files = $connection->ls(\Magento\Framework\Filesystem\Io\File::GREP_FILES);
 
-            $minDate = (new \DateTime())->modify(sprintf('-%s days', $client->getData('remove_files_order_than_days_ago')));
+            $minDate = (new \DateTime())->modify(sprintf('-%s days', $client->getData('remove_files_older_than_days_ago')));
 
             $count = 0;
             foreach ($files as $file) {
@@ -46,7 +46,7 @@ class RemoveFiles
                     continue;
                 }
 
-                if (!$count) {
+                if ($count === 0) {
                     $removedFiles->setFirstFileName($fileName);
                 }
 

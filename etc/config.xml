@@ -5,7 +5,7 @@
             <cleaner>
                 <cleanup_of_history>
                     <is_enabled>1</is_enabled>
-                    <retention_period>30</retention_period>
+                    <retention_period_in_days>30</retention_period_in_days>
                 </cleanup_of_history>
             </cleaner>
         </erp_connector>

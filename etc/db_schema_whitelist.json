@@ -1,0 +1,37 @@
+{
+    "erp_connector_cleaner_configuration": {
+        "column": {
+            "configuration_id": true,
+            "provider_id": true,
+            "is_enabled": true,
+            "save_cleanup_history": true,
+            "batch_size": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_2CF80DFDC2DC471776286FD1B0E05F46": true,
+            "ERP_CONNECTOR_CLEANER_CONFIGURATION_PROVIDER_ID": true
+        }
+    },
+    "erp_connector_scheduler": {
+        "column": {
+            "remove_files_older_than_days_ago": true
+        }
+    },
+    "erp_connector_cleanup_history": {
+        "column": {
+            "id": true,
+            "provider_id": true,
+            "connector_id": true,
+            "created_at": true,
+            "first_file_name": true,
+            "last_file_name": true,
+            "count": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_6F96ABEE206657F019F2681F2E6B88B0": true,
+            "FK_01F5FB7EB3EA5E3D8A40E54A0305C3F5": true
+        }
+    }
+}

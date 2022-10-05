@@ -48,9 +48,9 @@ class General extends \MageSuite\ErpConnector\Model\ProviderProcessor\ProviderPr
     {
         $clientData = [
             'provider' => $this->getProvider(),
-            'bath_size' => $this->getConfiguration()->getBatchSize(),
+            'batch_size' => $this->getConfiguration()->getBatchSize(),
             'file_name_pattern' => $this->scheduler->getFileName(),
-            'remove_files_order_than_days_ago' => $this->scheduler->getRemoveFilesOlderThanDaysAgo()
+            'remove_files_older_than_days_ago' => $this->scheduler->getRemoveFilesOlderThanDaysAgo()
         ];
 
         foreach ($this->getConnectors() as $connector) {

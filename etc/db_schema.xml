@@ -21,7 +21,7 @@
         <column xsi:type="smallint" name="remove_files_older_than_days_ago" unsigned="true" nullable="true"/>
     </table>
 
-    <table name="erp_connector_cleaner_history" resource="default" engine="innodb">
+    <table name="erp_connector_cleanup_history" resource="default" engine="innodb">
         <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" />
         <column xsi:type="int" name="provider_id" padding="10" unsigned="true" nullable="false" />
         <column xsi:type="int" name="connector_id" padding="10" unsigned="true" nullable="false" />
@@ -32,10 +32,10 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
-        <constraint xsi:type="foreign" referenceId="erp_connector_cleaner_history_provider_id" table="erp_connector_cleaner_history"
+        <constraint xsi:type="foreign" referenceId="erp_connector_cleanup_history_provider_id" table="erp_connector_cleanup_history"
                     column="provider_id" referenceTable="erp_connector_provider" referenceColumn="id"
                     onDelete="CASCADE"/>
-        <constraint xsi:type="foreign" referenceId="erp_connector_cleaner_history_connector_id" table="erp_connector_cleaner_history"
+        <constraint xsi:type="foreign" referenceId="erp_connector_cleanup_history_connector_id" table="erp_connector_cleanup_history"
                     column="connector_id" referenceTable="erp_connector_connector" referenceColumn="id"
                     onDelete="CASCADE"/>
     </table>

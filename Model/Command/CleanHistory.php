@@ -12,18 +12,18 @@ class CleanHistory
         $this->connection = $resourceConnection->getConnection();
     }
 
-    public function execute($retentionPeriod)
+    public function execute($retentionPeriodInDays)
     {
-        if (empty($retentionPeriod)) {
+        if (empty($retentionPeriodInDays)) {
             return;
         }
 
         $maxDate = (new \DateTime())
-            ->modify('-' . $retentionPeriod . ' days')
+            ->modify('-' . $retentionPeriodInDays . ' days')
             ->format(\Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT);
 
         $this->connection->delete(
-            $this->connection->getTableName('erp_connector_cleaner_history'),
+            $this->connection->getTableName('erp_connector_cleanup_history'),
             ['created_at < ?' => $maxDate]
         );
     }

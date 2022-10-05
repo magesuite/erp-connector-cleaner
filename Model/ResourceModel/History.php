@@ -7,7 +7,7 @@ class History extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     protected function _construct(): void
     {
-        $this->_init('erp_connector_cleaner_history', 'id');
+        $this->_init('erp_connector_cleanup_history', 'id');
     }
 
     public function getProviderIdsByName($name)

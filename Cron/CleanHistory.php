@@ -22,7 +22,6 @@ class CleanHistory
             return true;
         }
 
-        $this->cleanHistory->execute($this->configuration->getCleanupOfHistoryRetentionPeriod());
-        return true;
+        $this->cleanHistory->execute($this->configuration->getCleanupOfHistoryRetentionPeriodInDays());
     }
 }
