@@ -55,7 +55,7 @@ interface HistoryInterface
      * @param int $id
      * @return self
      */
-    public function setId(int $id);
+    public function setId($id);
 
     /**
      * @param int $providerId

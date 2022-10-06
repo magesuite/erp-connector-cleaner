@@ -71,7 +71,7 @@ class History extends \Magento\Framework\Model\AbstractModel implements \MageSui
     /**
      * {@inheritdoc}
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->setData(self::ID, $id);
         return $this;
