@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <erp_connector>
+            <cleaner>
+                <cleanup_of_history>
+                    <is_enabled>1</is_enabled>
+                    <retention_period_in_days>30</retention_period_in_days>
+                </cleanup_of_history>
+            </cleaner>
+        </erp_connector>
+    </default>
+</config>
