@@ -30,7 +30,7 @@ class RemoveFiles
         $connection = $client->getConnection();
 
         try {
-            $client->validateDirectoryExist($destinationDir);
+            $client->validateDirectoryExist($destinationDir, $provider->getName());
 
             $connection->cd($destinationDir);
             $files = $connection->ls(\Magento\Framework\Filesystem\Io\File::GREP_FILES);
