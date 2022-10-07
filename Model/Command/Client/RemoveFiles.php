@@ -19,6 +19,11 @@ class RemoveFiles
     public function execute($client)
     {
         $destinationDir = $client->getFullPath($client->getData('destination_dir'));
+
+        if (empty($destinationDir)) {
+            $destinationDir = $client->getData('destination_dir');
+        }
+
         $provider = $client->getData('provider');
 
         $removedFiles = new \Magento\Framework\DataObject([
@@ -39,13 +44,12 @@ class RemoveFiles
 
             $count = 0;
             foreach ($files as $file) {
-                $fileModDate = $file['mod_date'] ?? null;
+                $fileDate = $this->getFileModificationDate($file);
 
-                if (!$fileModDate) {
+                if (!$fileDate) {
                     continue;
                 }
 
-                $fileDate = new \DateTime($fileModDate);
                 $fileName = $file['text'];
 
                 if ($fileDate > $minDate || !$client->isValidFileName($fileName)) {
@@ -78,5 +82,25 @@ class RemoveFiles
 
         $client->closeConnection($connection);
         return $removedFiles;
+    }
+
+    protected function getFileModificationDate($file)
+    {
+        $fileModDate = $file['mod_date'] ?? null;
+
+        if ($fileModDate) {
+            return new \DateTime($fileModDate);
+        }
+
+        if (isset($file['text']) || !$file['text']) {
+            return null;
+        }
+
+        try {
+            $fileModDate = filemtime($file['text']); //phpcs:ignore
+            return new \DateTime($fileModDate);
+        } catch (\Exception $exception) {} //phpcs:ignore
+
+        return null;
     }
 }
