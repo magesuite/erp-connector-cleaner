@@ -39,7 +39,13 @@ class RemoveFiles
 
             $count = 0;
             foreach ($files as $file) {
-                $fileDate = new \DateTime($file['mod_date']);
+                $fileModDate = $file['mod_date'] ?? null;
+
+                if (!$fileModDate) {
+                    continue;
+                }
+
+                $fileDate = new \DateTime($fileModDate);
                 $fileName = $file['text'];
 
                 if ($fileDate > $minDate || !$client->isValidFileName($fileName)) {
