@@ -224,7 +224,7 @@
                         </validation>
                     </settings>
                 </field>
-                <dynamicRows name="connectors" component="Magento_Ui/js/dynamic-rows/dynamic-rows" template="Creativestyle_CustomizationIpetErp/dynamic-rows/nested-dynamic-rows">
+                <dynamicRows name="connectors" component="Magento_Ui/js/dynamic-rows/dynamic-rows">
                     <settings>
                         <addButtonLabel translate="true">Add Connector</addButtonLabel>
                         <componentType>dynamicRows</componentType>
